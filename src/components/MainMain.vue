@@ -12,6 +12,15 @@
                 <button @click="itemsListUpload">
                     Adicionar mais items na lista
                 </button>
+                <hr>
+                <form>
+                    <div style="display:flex;">
+                        <input type="text" v-model="user.first_name">
+                        <div style="margin:0 1px;"></div>
+                        <input type="text" v-model="user.last_name">
+                    </div>
+                    <p>{{ fullName }}</p>
+                </form>
             </div>
         </div>
     </main>
@@ -34,6 +43,11 @@ export default {
                     name: '2 item top',
                 },
             ],
+
+            user: {
+                first_name: "",
+                last_name: ""
+            }
         };
     },
 
@@ -46,6 +60,12 @@ export default {
                 name: id + ' item top'
             });
         },
+    },
+
+    computed: {
+        fullName() {
+            return `${this.user.first_name} ${this.user.last_name}`;
+        }
     },
 };
 
