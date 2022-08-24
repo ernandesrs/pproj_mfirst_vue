@@ -4,28 +4,11 @@
             <h1 class="main-title" v-show="pageTitle">{{ pageTitle }}</h1>
             <hr v-show="pageTitle">
             <div class="main-content">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                    aspernatur perferendis provident illum dolores, recusandae quis
-                    suscipit omnis magnam. Facilis quasi optio sed velit amet quia officia
-                    molestiae possimus voluptatum, quidem deleniti inventore illum. Maxime
-                    libero aperiam pariatur provident omnis?
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis qui
-                    perspiciatis aperiam, non rem eaque incidunt adipisci odit iste quo
-                    assumenda laudantium, neque porro esse distinctio nihil blanditiis
-                    vitae repudiandae fuga eveniet sapiente ut sit! Distinctio doloribus
-                    quibusdam sunt ex provident perspiciatis quas atque, facilis, ducimus
-                    exercitationem incidunt sint reiciendis doloremque veritatis, nam enim
-                    explicabo. Similique optio itaque nisi delectus iste eaque autem
-                    ducimus reiciendis nesciunt aliquam, quo, nulla at quas velit, tenetur
-                    ea commodi?
-                </p>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi totam
-                    ut voluptatum sapiente vitae eaque ipsum ipsam eum distinctio cumque?
-                </p>
+                <ul>
+                    <li v-for="item in items" v-bind:key="item">
+                        <b>#{{ item.id }}</b> {{ item.name }}
+                    </li>
+                </ul>
             </div>
         </div>
     </main>
@@ -37,7 +20,29 @@ export default {
     name: 'MainMain',
     data() {
         return {
-            pageTitle: 'Conteúdo da página inicial'
+            pageTitle: 'Uma lista qualquer',
+            items: [
+                {
+                    id: 1,
+                    name: 'Item muito top',
+                },
+                {
+                    id: 2,
+                    name: 'Outro item top',
+                },
+                {
+                    id: 3,
+                    name: 'Legal este item',
+                },
+                {
+                    id: 4,
+                    name: 'Penúltimo item, mas não menos legal',
+                },
+                {
+                    id: 5,
+                    name: 'Último item, mas não menos legal',
+                },
+            ],
         };
     }
 };
@@ -45,6 +50,25 @@ export default {
 </script>
 
 <style>
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul>li {
+    display: block;
+    text-align: left;
+    background-color: #f2f2f2;
+    padding: 8px 16px;
+    margin-bottom: 1px;
+}
+
+ul>li:hover {
+    background-color: #35495E;
+    color: #f2f2f2;
+    cursor: pointer;
+}
+
 .main {
     width: 100%;
     display: flex;
