@@ -14,6 +14,11 @@
                 </button>
                 <hr>
                 <form>
+                    <h3 style="text-align: left;">Título desta página</h3>
+                    <div style="display:flex;">
+                        <input type="text" v-model="pageTitle">
+                    </div>
+                    <h3 style="text-align: left;">Usuário</h3>
                     <div style="display:flex;">
                         <input type="text" v-model="user.first_name">
                         <div style="margin:0 1px;"></div>
@@ -33,6 +38,7 @@ export default {
     data() {
         return {
             pageTitle: 'Uma lista qualquer',
+
             items: [
                 {
                     id: 1,
@@ -65,6 +71,22 @@ export default {
     computed: {
         fullName() {
             return `${this.user.first_name} ${this.user.last_name}`;
+        }
+    },
+
+    watch: {
+        pageTitle() {
+            console.log("Título da página foi alterado!\n");
+            console.log("---- implementar uma lógica ----");
+        },
+
+        user: {
+            handler() {
+                console.log("Alterou User!!!\n");
+                console.log("---- implementar uma lógica ----");
+            },
+
+            deep: true
         }
     },
 };
