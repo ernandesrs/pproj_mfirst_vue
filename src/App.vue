@@ -1,5 +1,10 @@
 <template>
-  <MainHeader />
+  <MainHeader>
+    <template v-slot:subtitle v-if="subtitle">
+      <h3>{{ subtitle }}</h3>
+    </template>
+  </MainHeader>
+
   <MainMain />
   <MainFooter />
 </template>
@@ -15,7 +20,13 @@ export default {
   components: {
     MainHeader,
     MainMain,
-    MainFooter
+    MainFooter,
+  },
+
+  data() {
+    return {
+      subtitle: "Página Inicial",
+    };
   }
 }
 

@@ -1,6 +1,9 @@
 <template>
     <header class="header">
         <img class="logo" src="./../assets/logo.png" alt="MfirstVue">
+
+        <slot name="subtitle" />
+        
         <p class="desc">
             Este é meu primeiro componente em Vue: 24/08/2022.
         </p>
