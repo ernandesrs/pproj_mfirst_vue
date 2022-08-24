@@ -6,7 +6,7 @@
             <div class="main-content">
                 <ul>
                     <li v-for="item in items" v-bind:key="item">
-                        <b>#{{ item.id }}</b> {{ item.name }}
+                        <b>#{{ item.id }}</b> - {{ item.name }}
                     </li>
                 </ul>
                 <button @click="itemsListUpload">
@@ -27,11 +27,11 @@ export default {
             items: [
                 {
                     id: 1,
-                    name: 'Item muito top',
+                    name: '1 muito top',
                 },
                 {
                     id: 2,
-                    name: 'Outro item top',
+                    name: '2 item top',
                 },
             ],
         };
@@ -43,10 +43,10 @@ export default {
 
             this.items.push({
                 id: id,
-                name: 'Outro item de número ' + id
+                name: id + ' item top'
             });
         },
-    }
+    },
 };
 
 </script>
@@ -62,7 +62,7 @@ button {
 }
 
 button:hover {
-    background-color: #35495ef0;
+    opacity: 0.8;
 }
 
 ul {
@@ -71,7 +71,8 @@ ul {
 }
 
 ul>li {
-    display: block;
+    display: flex;
+    align-items: center;
     text-align: left;
     background-color: #f2f2f2;
     padding: 8px 16px;
@@ -79,9 +80,13 @@ ul>li {
 }
 
 ul>li:hover {
-    background-color: #35495E;
-    color: #f2f2f2;
+    background-color: #ebeced;
+    color: #35495E;
     cursor: pointer;
+}
+
+ul>li>button {
+    margin-left: auto;
 }
 
 .main {

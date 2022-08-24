@@ -5,9 +5,7 @@
             Este é meu primeiro componente em Vue: 24/08/2022.
         </p>
         <p class="date">
-            Hoje é dia: <strong v-text="today.day"></strong> do mês <strong
-                v-text="today.month"></strong> do ano de <strong
-                v-text="today.year"></strong>
+            Hoje é dia: <strong v-text="fullDate"></strong>
         </p>
     </header>
 </template>
@@ -23,7 +21,13 @@ export default {
                 year: (new Date()).getFullYear(),
             }
         };
-    }
+    },
+
+    computed: {
+        fullDate() {
+            return `${this.today.day}/${this.today.month}/${this.today.year}`;
+        },
+    },
 }
 </script>
 
