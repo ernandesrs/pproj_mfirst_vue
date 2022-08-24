@@ -9,6 +9,9 @@
                         <b>#{{ item.id }}</b> {{ item.name }}
                     </li>
                 </ul>
+                <button @click="itemsListUpload">
+                    Adicionar mais items na lista
+                </button>
             </div>
         </div>
     </main>
@@ -30,26 +33,38 @@ export default {
                     id: 2,
                     name: 'Outro item top',
                 },
-                {
-                    id: 3,
-                    name: 'Legal este item',
-                },
-                {
-                    id: 4,
-                    name: 'Penúltimo item, mas não menos legal',
-                },
-                {
-                    id: 5,
-                    name: 'Último item, mas não menos legal',
-                },
             ],
         };
+    },
+
+    methods: {
+        itemsListUpload() {
+            let id = this.items.length + 1;
+
+            this.items.push({
+                id: id,
+                name: 'Outro item de número ' + id
+            });
+        },
     }
 };
 
 </script>
 
 <style>
+button {
+    border: 0;
+    background-color: #35495E;
+    padding: 8px 16px;
+    color: #f2f2f2;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+button:hover {
+    background-color: #35495ef0;
+}
+
 ul {
     list-style: none;
     padding-left: 0;
