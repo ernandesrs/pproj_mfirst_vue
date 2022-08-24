@@ -1,16 +1,22 @@
 <template>
   <MainHeader />
+  <MainMain />
+  <MainFooter />
 </template>
 
 <script>
 
 import MainHeader from './components/MainHeader.vue';
+import MainMain from './components/MainMain.vue';
+import MainFooter from './components/MainFooter.vue';
 
 export default {
   name: 'App',
 
   components: {
     MainHeader,
+    MainMain,
+    MainFooter,
   },
 }
 
