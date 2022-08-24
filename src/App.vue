@@ -1,33 +1,17 @@
 <template>
-  <MainHeader>
-    <template v-slot:subtitle v-if="subtitle">
-      <h3>{{ subtitle }}</h3>
-    </template>
-  </MainHeader>
-
-  <MainMain />
-  <MainFooter />
+  <MainHeader />
 </template>
 
 <script>
 
 import MainHeader from './components/MainHeader.vue';
-import MainMain from './components/MainMain.vue';
-import MainFooter from './components/MainFooter.vue';
 
 export default {
   name: 'App',
+
   components: {
     MainHeader,
-    MainMain,
-    MainFooter,
   },
-
-  data() {
-    return {
-      subtitle: "Página Inicial",
-    };
-  }
 }
 
 </script>
@@ -38,9 +22,13 @@ export default {
 }
 
 body {
-  background-color: #efefef;
+  background-color: #e8e8e8;
+  min-height: 100vh;
   padding: 0;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #app {
@@ -50,8 +38,12 @@ body {
   text-align: center;
   color: #2c3e50;
 
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  background-color: #f2f2f2;
+  width: 100%;
+  max-width: 475px;
+  border: solid 1px #ccc;
+  padding: 20px;
+  border-radius: 3px;
+  box-shadow: 0 0 18px 0 #2c3e502e;
 }
 </style>
