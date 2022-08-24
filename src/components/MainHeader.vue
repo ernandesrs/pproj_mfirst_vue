@@ -4,12 +4,26 @@
         <p class="desc">
             Este é meu primeiro componente em Vue: 24/08/2022.
         </p>
+        <p class="date">
+            Hoje é dia: <strong v-text="today.day"></strong> do mês <strong
+                v-text="today.month"></strong> do ano de <strong
+                v-text="today.year"></strong>
+        </p>
     </header>
 </template>
 
 <script>
 export default {
     name: 'MainHeader',
+    data() {
+        return {
+            today: {
+                day: (new Date()).getDay(),
+                month: (new Date()).getMonth(),
+                year: (new Date()).getFullYear(),
+            }
+        };
+    }
 }
 </script>
 
