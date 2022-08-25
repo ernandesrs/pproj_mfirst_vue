@@ -16,7 +16,7 @@ export default {
         closeAlert() {
             this.$emit("closeAlert");
         }
-    },
+    }
 };
 
 </script>
