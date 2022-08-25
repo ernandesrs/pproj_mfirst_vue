@@ -1,7 +1,7 @@
 <template>
     <div :class="['alert', 'alert-' + message.type]">
         <div class="text">{{ message.text }}</div>
-        <button class="close">X</button>
+        <button class="close" @click="closeAlert">X</button>
     </div>
 </template>
 
@@ -10,7 +10,13 @@
 export default {
     name: "UiAlert",
 
-    props: ['message']
+    props: ['message'],
+
+    methods: {
+        closeAlert() {
+            this.$emit("closeAlert");
+        }
+    },
 };
 
 </script>

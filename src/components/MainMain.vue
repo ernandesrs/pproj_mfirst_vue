@@ -5,7 +5,7 @@
             <button @click="newTodo">Adicionar</button>
         </div>
 
-        <UiAlert :message="message" v-if="message.text" />
+        <UiAlert :message="message" v-if="message.text" @closeAlert="clearMessage" />
 
         <div class="todo-list">
             <div class="list-item" v-for="todo in todos" :key="todo">
@@ -67,6 +67,11 @@ export default {
         setMessage(type, text) {
             this.message.type = type;
             this.message.text = text;
+        },
+
+        clearMessage() {
+            this.message.type = null;
+            this.message.text = null;
         }
     },
 }
