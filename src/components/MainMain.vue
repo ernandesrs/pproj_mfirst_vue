@@ -49,6 +49,7 @@ export default {
 
                 this.newTodoInput = "";
 
+                console.clear();
                 console.log("Nova tarefa adicionada!");
             } else {
                 console.log("Preencha o campo!");
