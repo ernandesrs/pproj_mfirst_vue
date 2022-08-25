@@ -28,6 +28,16 @@ export default {
         };
     },
 
+    watch: {
+        todos: {
+            handler() {
+                console.log("\n\n", this.todos, "\n\n");
+            },
+
+            deep: true
+        },
+    },
+
     methods: {
         newTodo() {
             if (this.newTodoInput.length > 0) {
@@ -38,6 +48,8 @@ export default {
                 });
 
                 this.newTodoInput = "";
+
+                console.log("Nova tarefa adicionada!");
             } else {
                 console.log("Preencha o campo!");
             }
