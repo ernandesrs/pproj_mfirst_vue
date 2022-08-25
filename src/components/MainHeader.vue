@@ -2,7 +2,7 @@
 
     <header class="header">
         <img src="@/assets/logo.png" alt="Logo">
-        <h2>Todo</h2>
+        <h2>ue</h2>
     </header>
 
 </template>
@@ -25,12 +25,12 @@ export default {
 }
 
 .header>img {
-    height: 50px;
+    height: 45px;
 }
 
 .header>h2 {
-    font-size: 32px;
-    margin: 0 0 0 12px;
+    font-size: 52px;
+    margin: 0 0 0 -2px;
     color: #35495E;
 }
 </style>
