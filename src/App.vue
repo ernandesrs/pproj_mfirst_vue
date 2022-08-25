@@ -3,10 +3,10 @@
   <MainHeader>
     <template v-slot:header-nav>
       <nav>
-        <router-link to="/">Home</router-link> |
-        <router-link to="/precos">Prices</router-link> |
-        <router-link to="/contato">Contact</router-link> |
-        <router-link to="/sobre">About</router-link>
+        <router-link :to="{ name: 'home' }">Home</router-link> |
+        <router-link :to="{ name: 'prices' }">Prices</router-link> |
+        <router-link :to="{ name: 'contact' }">Contact</router-link> |
+        <router-link :to="{ name: 'about' }">About</router-link>
       </nav>
     </template>
   </MainHeader>
