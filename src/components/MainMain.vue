@@ -5,6 +5,8 @@
             <button @click="newTodo">Adicionar</button>
         </div>
 
+        <UiAlert />
+
         <div class="todo-list">
             <div class="list-item" v-for="todo in todos" :key="todo">
                 <input class="check" type="checkbox" v-model="todo.completed"
@@ -18,8 +20,12 @@
 
 <script>
 
+import UiAlert from './ui/UiAlert.vue';
+
 export default {
-    name: 'MainMain',
+    name: "MainMain",
+
+    components: { UiAlert },
 
     data() {
         return {
@@ -33,7 +39,6 @@ export default {
             handler() {
                 console.log("\n\n", this.todos, "\n\n");
             },
-
             deep: true
         },
     },
@@ -46,12 +51,11 @@ export default {
                     name: this.newTodoInput,
                     completed: false
                 });
-
                 this.newTodoInput = "";
-
                 console.clear();
                 console.log("Nova tarefa adicionada!");
-            } else {
+            }
+            else {
                 console.log("Preencha o campo!");
             }
         },
