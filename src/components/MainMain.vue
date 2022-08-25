@@ -1,7 +1,8 @@
 <template>
     <main class="main">
         <div class="create-todo-area">
-            <input type="text" placeholder="Adicionar nova tarefa" v-model="newTodoInput">
+            <input type="text" placeholder="Adicionar nova tarefa" v-model="newTodoInput"
+                @keyup.enter="newTodo">
             <button @click="newTodo">Adicionar</button>
         </div>
 
