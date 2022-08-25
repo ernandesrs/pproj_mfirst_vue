@@ -55,15 +55,19 @@ export default {
                     name: this.newTodoInput,
                     completed: false
                 });
+
                 this.newTodoInput = "";
-                this.message.type = "success";
-                this.message.text = "Nova tarefa adicionada!";
-            }
-            else {
-                this.message.type = "warning";
-                this.message.text = "Preencha o campo com a tarefa!";
+
+                this.setMessage("success", "Nova tarefa adicionada!");
+            } else {
+                this.setMessage("warning", "Preencha o campo!");
             }
         },
+
+        setMessage(type, text) {
+            this.message.type = type;
+            this.message.text = text;
+        }
     },
 }
 
