@@ -30,13 +30,17 @@ export default {
 
     methods: {
         newTodo() {
-            this.todos.push({
-                id: (new Date()).getTime(),
-                name: this.newTodoInput,
-                completed: false
-            });
+            if (this.newTodoInput.length > 0) {
+                this.todos.push({
+                    id: (new Date()).getTime(),
+                    name: this.newTodoInput,
+                    completed: false
+                });
 
-            this.newTodoInput = "";
+                this.newTodoInput = "";
+            } else {
+                console.log("Preencha o campo!");
+            }
         },
     },
 }
