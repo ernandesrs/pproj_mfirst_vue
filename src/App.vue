@@ -1,55 +1,50 @@
 <template>
-  <MainHeader />
-  <MainMain />
-  <MainFooter />
+
+  <MainHeader>
+    <template v-slot:header-nav>
+      <nav>
+        <router-link to="/">Home</router-link> |
+        <router-link to="/precos">Prices</router-link> |
+        <router-link to="/contato">Contact</router-link> |
+        <router-link to="/sobre">About</router-link>
+      </nav>
+    </template>
+  </MainHeader>
+
+  <router-view />
+
+  <MainFooter></MainFooter>
 </template>
 
 <script>
 
 import MainHeader from './components/MainHeader.vue';
-import MainMain from './components/MainMain.vue';
 import MainFooter from './components/MainFooter.vue';
 
 export default {
-  name: 'App',
-
-  components: {
-    MainHeader,
-    MainMain,
-    MainFooter,
-  },
-}
-
+  components: { MainHeader, MainFooter },
+};
 </script>
 
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #e8e8e8;
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
 
-  background-color: #f2f2f2;
-  width: 100%;
-  max-width: 475px;
-  border: solid 1px #ccc;
-  padding: 20px;
-  border-radius: 3px;
-  box-shadow: 0 0 18px 0 #2c3e502e;
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>

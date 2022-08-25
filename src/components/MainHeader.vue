@@ -1,8 +1,12 @@
 <template>
 
     <header class="header">
-        <img src="@/assets/logo.png" alt="Logo">
-        <h2>ue</h2>
+        <div class="logo">
+            <img src="@/assets/logo.png" alt="Logo">
+            <h2>ue</h2>
+        </div>
+
+        <slot name="header-nav" />
     </header>
 
 </template>
@@ -18,19 +22,24 @@ export default {
 <style>
 .header {
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     cursor: default;
     margin-bottom: 20px;
 }
 
-.header>img {
-    height: 45px;
+.header>.logo {
+    display: flex;
+    align-items: center;
 }
 
-.header>h2 {
-    font-size: 52px;
-    margin: 0 0 0 -2px;
+.header>.logo>img {
+    height: 35px;
+}
+
+.header>.logo>h2 {
+    font-size: 32px;
+    margin: 0 0 0 0;
     color: #35495E;
 }
 </style>
