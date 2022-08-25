@@ -1,6 +1,6 @@
 <template>
-    <div class="alert">
-        <slot name="message-text"></slot>
+    <div :class="['alert', 'alert-' + message.type]">
+        <div class="text">{{ message.text }}</div>
         <button class="close">X</button>
     </div>
 </template>
@@ -8,7 +8,9 @@
 <script>
 
 export default {
-    name: "UiAlert"
+    name: "UiAlert",
+
+    props: ['message']
 };
 
 </script>

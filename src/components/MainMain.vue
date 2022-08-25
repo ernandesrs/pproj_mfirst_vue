@@ -5,7 +5,7 @@
             <button @click="newTodo">Adicionar</button>
         </div>
 
-        <UiAlert />
+        <UiAlert :message="message" v-if="message.text" />
 
         <div class="todo-list">
             <div class="list-item" v-for="todo in todos" :key="todo">
@@ -30,6 +30,10 @@ export default {
     data() {
         return {
             newTodoInput: "",
+            message: {
+                type: null,
+                text: null,
+            },
             todos: [],
         };
     },
@@ -52,11 +56,12 @@ export default {
                     completed: false
                 });
                 this.newTodoInput = "";
-                console.clear();
-                console.log("Nova tarefa adicionada!");
+                this.message.type = "success";
+                this.message.text = "Nova tarefa adicionada!";
             }
             else {
-                console.log("Preencha o campo!");
+                this.message.type = "warning";
+                this.message.text = "Preencha o campo com a tarefa!";
             }
         },
     },
